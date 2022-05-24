@@ -1,23 +1,23 @@
 data class Comments (
     val count : Int = 0,
-    val can_post : Boolean = true,
+    val canPost : Boolean = true,
 )
 
 data class Likes(
     val count : Int = 0,
-    val user_likes : Boolean = false
+    val userLikes : Boolean = false
 )
 
 data class Post(
     val id: Int = 0,
-    val owner_id: Int = 0,
-    val from_id: Int = 0,
-    val created_by : Int = 0,
+    val ownerId: Int = 0,
+    val fromId: Int = 0,
+    val createdBy : Int = 0,
     val date : Int,
     val text : String,
-    val reply_owner_id : Int = 0,
-    val reply_post_id : Int = 0,
-    val friends_only : Boolean = false,
+    val replyOwnerId : Int = 0,
+    val replyPostId : Int = 0,
+    val friendsOnly : Boolean = false,
     val comments : Comments,
     val likes : Likes
 )
@@ -31,11 +31,10 @@ object WallService {
         return posts.last()
     }
 
-    fun edit (post : Post) : Boolean {
-        for (thisPost in posts) {
-            if (post.id == thisPost.id) {
-                val editPost = post.copy(from_id = 11, created_by = 11, text = "content")
-                add(editPost)
+    fun update (post : Post) : Boolean {
+        for ((index, oldPost) in posts.withIndex()) {
+            if (post.id == oldPost.id) {
+                posts[index] = post.copy(ownerId = oldPost.ownerId, date = oldPost.date)
                 return true
             }
         }

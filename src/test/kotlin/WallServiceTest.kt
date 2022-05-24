@@ -1,6 +1,6 @@
 import WallService.add
-import WallService.edit
-import org.junit.Assert.assertEquals
+import WallService.update
+import org.junit.Assert.*
 import org.junit.Test
 
 internal class WallServiceTest {
@@ -18,7 +18,7 @@ internal class WallServiceTest {
 
         val result = add(post).id
 
-        assertEquals(1, 1)
+        assertEquals(1, result)
     }
 
     @Test
@@ -32,9 +32,9 @@ internal class WallServiceTest {
             likes = likes
         )
 
-        val result = edit(post)
+        val result = update(post)
 
-        assertEquals(false, result)
+        assertFalse(result)
     }
 
     @Test
@@ -49,8 +49,8 @@ internal class WallServiceTest {
         )
 
         val addedPost = add(post)
-        val result = edit(addedPost)
+        val result = update(addedPost)
 
-        assertEquals(true, result)
+        assertTrue(result)
     }
 }
