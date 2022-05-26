@@ -9,11 +9,23 @@ internal class WallServiceTest {
     fun addTest() {
         val comments = Comments()
         val likes = Likes()
+        val repost = Repost()
+        val views = Views()
+        val postSource = PostSource()
+        val geo = Geo()
+
+
         val post = Post(
             date = 12022012,
             text = "content",
             comments = comments,
-            likes = likes
+            copyright = "netology.ru",
+            likes = likes,
+            repost = repost,
+            views = views,
+            postSource = postSource,
+            geo = geo,
+            signerId = 0
         )
 
         val result = add(post).id
@@ -25,11 +37,22 @@ internal class WallServiceTest {
     fun editWithoutExistingId() {
         val comments = Comments()
         val likes = Likes()
+        val repost = Repost()
+        val views = Views()
+        val postSource = PostSource()
+        val geo = Geo()
+
         val post = Post(
             date = 12022012,
             text = "content",
             comments = comments,
-            likes = likes
+            copyright = "netology.ru",
+            likes = likes,
+            repost = repost,
+            views = views,
+            postSource = postSource,
+            geo = geo,
+            signerId = 0
         )
 
         val result = update(post)
@@ -41,11 +64,22 @@ internal class WallServiceTest {
     fun editWithExistingId() {
         val comments = Comments()
         val likes = Likes()
+        val repost = Repost()
+        val views = Views()
+        val postSource = PostSource()
+        val geo = Geo()
+
         val post = Post(
             date = 12022012,
             text = "content",
             comments = comments,
-            likes = likes
+            copyright = "netology.ru",
+            likes = likes,
+            repost = repost,
+            views = views,
+            postSource = postSource,
+            geo = geo,
+            signerId = 0
         )
 
         val addedPost = add(post)
