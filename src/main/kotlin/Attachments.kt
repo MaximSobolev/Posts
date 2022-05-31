@@ -4,50 +4,27 @@ interface Attachments {
 
 data class PhotoAttachments (
     override val type: String = "photo",
-    private val id: Int,
-    private val albumId: Int,
-    private val ownerId: Int,
-    private val userId: Int,
-    private val text : String,
-    private val date : Int,
-    val photo : Photo = Photo (id, albumId, ownerId, userId, text, date)
+    val photo : Photo
         ) : Attachments
 
 data class VideoAttachments (
     override val type: String = "video",
-    private val id: Int,
-    private val ownerId: Int,
-    private val title : String,
-    private val description : String,
-    private val date : Int,
-    val video : Video = Video (id,ownerId, title, description, date)
+    val video : Video
 ) : Attachments
 
 data class AudioAttachments (
     override val type: String = "audio",
-    private val id: Int,
-    private val ownerId: Int,
-    private val artist : String,
-    private val title : String,
-    private val date: Int,
-    val audio : Audio = Audio (id,ownerId, artist, title, date)
+    val audio : Audio
 ) : Attachments
 
 data class DocAttachments (
     override val type: String = "doc",
-    private val id: Int,
-    private val ownerId: Int,
-    private val title : String,
-    private val size : Int,
-    private val date: Int,
-    val doc : Doc = Doc (id,ownerId, title, size, date)
+    val doc : Doc
 ) : Attachments
 
 data class LinkAttachments (
     override val type: String = "link",
-    private val url: String,
-    private val title : String,
-    val link : Link = Link (url, title)
+    val link : Link
 ) : Attachments
 
 data class Photo (

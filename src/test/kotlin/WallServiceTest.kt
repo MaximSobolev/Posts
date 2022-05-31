@@ -13,19 +13,22 @@ internal class WallServiceTest {
         val views = Views()
         val postSource = PostSource()
         val geo = Geo()
-        val audio = AudioAttachments (
+        val audio = Audio(
             id = 1,
             ownerId = 1,
             artist = "Artist",
             title = "title",
-            date = 22082021)
-        val photo = PhotoAttachments (
+            date = 22082021
+        )
+        val audioAttachments = AudioAttachments (audio = audio)
+        val photo = Photo (
             id = 2,
             albumId = 2,
             ownerId = 2,
             userId = 2,
             text = "content",
             date  = 22082021)
+        val photoAttachments = PhotoAttachments (photo = photo)
 
 
         val post = Post(
@@ -37,7 +40,7 @@ internal class WallServiceTest {
             repost = repost,
             views = views,
             postSource = postSource,
-            attachments = arrayOf(audio, photo),
+            attachments = arrayOf(audioAttachments, photoAttachments),
             geo = geo,
             signerId = 0
         )
@@ -55,19 +58,23 @@ internal class WallServiceTest {
         val views = Views()
         val postSource = PostSource()
         val geo = Geo()
-        val audio = AudioAttachments (
+        val audio = Audio(
             id = 1,
             ownerId = 1,
             artist = "Artist",
             title = "title",
-            date = 22082021)
-        val photo = PhotoAttachments (
+            date = 22082021
+        )
+        val audioAttachments = AudioAttachments (audio = audio)
+        val photo = Photo (
             id = 2,
             albumId = 2,
             ownerId = 2,
             userId = 2,
             text = "content",
             date  = 22082021)
+        val photoAttachments = PhotoAttachments (photo = photo)
+
 
         val post = Post(
             date = 12022012,
@@ -78,7 +85,7 @@ internal class WallServiceTest {
             repost = repost,
             views = views,
             postSource = postSource,
-            attachments = arrayOf(audio, photo),
+            attachments = arrayOf(audioAttachments, photoAttachments),
             geo = geo,
             signerId = 0
         )
@@ -96,19 +103,23 @@ internal class WallServiceTest {
         val views = Views()
         val postSource = PostSource()
         val geo = Geo()
-        val audio = AudioAttachments (
+        val audio = Audio(
             id = 1,
             ownerId = 1,
             artist = "Artist",
             title = "title",
-            date = 22082021)
-        val photo = PhotoAttachments (
+            date = 22082021
+        )
+        val audioAttachments = AudioAttachments (audio = audio)
+        val photo = Photo (
             id = 2,
             albumId = 2,
             ownerId = 2,
             userId = 2,
             text = "content",
             date  = 22082021)
+        val photoAttachments = PhotoAttachments (photo = photo)
+
 
         val post = Post(
             date = 12022012,
@@ -119,7 +130,7 @@ internal class WallServiceTest {
             repost = repost,
             views = views,
             postSource = postSource,
-            attachments = arrayOf(audio, photo),
+            attachments = arrayOf(audioAttachments, photoAttachments),
             geo = geo,
             signerId = 0
         )
